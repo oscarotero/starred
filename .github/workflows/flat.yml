@@ -24,7 +24,7 @@ jobs:
         uses: githubocto/flat@v3
         with:
           http_url: https://api.feedbin.com/v2/starred_entries.json
-          downloaded_filename: latest_entries.json
+          downloaded_filename: entries.tmp.json
           authorization: ${{ secrets.AUTHORIZATION }}
           postprocess: update_feedbin.js
         env:

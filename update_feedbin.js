@@ -1,7 +1,7 @@
 import { readJSON, writeJSON } from "https://deno.land/x/flat@0.0.15/mod.ts";
 
-const data = readJSON("./latest_entries.json");
-const entries = readJSON("./entries.json");
+const data = await readJSON("entries.tmp.json");
+const entries = await readJSON("entries.json");
 
 const newEntries = [];
 for (const id of data) {
@@ -35,4 +35,4 @@ if (newEntries.length) {
 }
 
 // Write the data
-writeJSON("entries.json", entries);
+await writeJSON("entries.json", entries);
