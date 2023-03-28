@@ -1,13 +1,14 @@
 name: Flat
-
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
+    paths:
+      - .github/workflows/flat.yml
+      - update_feedbin.js
+  workflow_dispatch: null
   schedule:
-    - cron: '*/30 * * * *'
-
+    - cron: 0 0 * * *
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -16,10 +17,8 @@ jobs:
         uses: denoland/setup-deno@main
         with:
           deno-version: v1.x
-
       - name: Check out repo
         uses: actions/checkout@v2
-
       - name: Fetch data
         uses: githubocto/flat@v3
         with:
