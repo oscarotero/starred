@@ -26,6 +26,6 @@ jobs:
           http_url: https://api.feedbin.com/v2/starred_entries.json
           downloaded_filename: latest_entries.json
           authorization: ${{ secrets.AUTHORIZATION }}
-          postprocess: update_create_datasets.js
+          postprocess: update_feedbin.js
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
