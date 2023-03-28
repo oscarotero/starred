@@ -27,3 +27,5 @@ jobs:
           downloaded_filename: latest_entries.json
           authorization: ${{ secrets.AUTHORIZATION }}
           postprocess: update_create_datasets.js
+        env:
+          AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
